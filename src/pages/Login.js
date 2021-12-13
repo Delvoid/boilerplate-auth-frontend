@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
 import FormRow from '../components/FormRow'
 import { Link, useNavigate } from 'react-router-dom'
 import { useGlobalContext } from '../context/context'
 import useLocalState from '../utils/localState'
 import Lock from '../assets/lock.svg'
-import url from '../utils/url'
 
 const Login = () => {
   const { saveUser, user } = useGlobalContext()
@@ -35,7 +33,7 @@ const Login = () => {
     const { email, password } = values
     const loginUser = { email, password }
     try {
-      const { data } = await axios.post(`${url}/api/v1/auth/login`, loginUser)
+      const { data } = await axios.post(`/api/v1/auth/login`, loginUser)
       setValues({ name: '', email: '', password: '' })
       showAlert({
         text: `Welcome, ${data?.user?.name}. Redirecting to dashboard...`,

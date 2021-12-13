@@ -1,8 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import url from '../utils/url'
-
 import useLocalState from '../utils/localState'
 
 const User = () => {
@@ -14,9 +12,9 @@ const User = () => {
   const getUser = useCallback(async () => {
     try {
       setLoading(true)
-      const { data } = await axios.get(`${url}/api/v1/users/${id}`)
+      const { data } = await axios.get(`/api/v1/users/${id}`)
       setUser(data.user)
-      const res = await axios.get(`${url}/api/v1/users/tokens/${id}`)
+      const res = await axios.get(`/api/v1/users/tokens/${id}`)
       setTokens(res.data.tokens)
 
       setLoading(false)

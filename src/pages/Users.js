@@ -1,8 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 
 import axios from 'axios'
-import url from '../utils/url'
-
 import useLocalState from '../utils/localState'
 import { Link } from 'react-router-dom'
 
@@ -13,7 +11,7 @@ const Users = () => {
   const getUsers = useCallback(async () => {
     try {
       setLoading(true)
-      const { data } = await axios.get(`${url}/api/v1/users/`)
+      const { data } = await axios.get(`/api/v1/users/`)
       setUsers(data.users)
 
       setLoading(false)
