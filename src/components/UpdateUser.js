@@ -3,6 +3,7 @@ import axios from 'axios'
 import FormRow from '../components/FormRow'
 import { useGlobalContext } from '../context/context'
 import useLocalState from '../utils/localState'
+import url from '../utils/url'
 
 const UpdateUser = React.memo(() => {
   const { saveUser, user } = useGlobalContext()
@@ -25,7 +26,10 @@ const UpdateUser = React.memo(() => {
     const { name, email } = values
     const loginUser = { name, email }
     try {
-      const { data } = await axios.patch(`/api/v1/users/updateUser`, loginUser)
+      const { data } = await axios.patch(
+        `${url}/api/v1/users/updateUser`,
+        loginUser
+      )
       showAlert({
         text: `Profile updated!`,
         type: 'success',

@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useContext, useState, useEffect } from 'react'
+import url from '../utils/url'
 
 const AppContext = React.createContext()
 
@@ -23,7 +24,7 @@ const AppProvider = ({ children }) => {
   const fetchUser = async () => {
     try {
       setIsLoading(true)
-      const { data } = await axios.get(`/api/v1/users/showMe`)
+      const { data } = await axios.get(`${url}/api/v1/users/showMe`)
       saveUser(data.user)
       setIsLoading(false)
       return data.user
@@ -35,7 +36,7 @@ const AppProvider = ({ children }) => {
   const getUserToken = async () => {
     try {
       setIsLoading(true)
-      const { data } = await axios.get(`/api/v1/users/tokens/`)
+      const { data } = await axios.get(`${url}/api/v1/users/tokens/`)
       saveTokens(data.tokens)
       setIsLoading(false)
     } catch (error) {
@@ -46,7 +47,7 @@ const AppProvider = ({ children }) => {
 
   const logoutUser = async () => {
     try {
-      await axios.delete('/api/v1/auth/logout')
+      await axios.delete(`${url}/api/v1/auth/logout`)
       removeUser()
     } catch (error) {
       console.log(error)

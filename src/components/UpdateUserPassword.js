@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import FormRow from '../components/FormRow'
 import useLocalState from '../utils/localState'
+import url from '../utils/url'
 
 const UpdateUserPassword = React.memo(() => {
   const [values, setValues] = useState({
@@ -22,7 +23,7 @@ const UpdateUserPassword = React.memo(() => {
     const { oldPassword, newPassword } = values
     const passwords = { oldPassword, newPassword }
     try {
-      await axios.patch(`/api/v1/users/updateUserPassword`, passwords)
+      await axios.patch(`${url}/api/v1/users/updateUserPassword`, passwords)
       showAlert({
         text: `Password updated!`,
         type: 'success',

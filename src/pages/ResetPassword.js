@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import url from '../utils/url'
+
 import FormRow from '../components/FormRow'
 import { useNavigate, useLocation } from 'react-router-dom'
 import useLocalState from '../utils/localState'
@@ -28,7 +30,7 @@ const ResetPassword = () => {
       return
     }
     try {
-      await axios.post('/api/v1/auth/reset-password', {
+      await axios.post(`${url}/api/v1/auth/reset-password`, {
         password,
         passwordToken: query.get('token'),
         email: query.get('email'),

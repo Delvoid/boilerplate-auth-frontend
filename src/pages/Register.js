@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import url from '../utils/url'
+
 import FormRow from '../components/FormRow'
 import { Link } from 'react-router-dom'
 import useLocalState from '../utils/localState'
@@ -35,7 +37,7 @@ const Register = () => {
 
     try {
       const { data } = await axios.post(
-        `/api/v1/auth/register`,
+        `${url}/api/v1/auth/register`,
         registerNewUser
       )
 

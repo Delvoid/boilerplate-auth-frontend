@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Link, useLocation } from 'react-router-dom'
+import url from '../utils/url'
+
 import { useGlobalContext } from '../context/context'
 
 function useQuery() {
@@ -16,7 +18,7 @@ const Verify = () => {
   const verifyToken = async () => {
     setLoading(true)
     try {
-      await axios.post('/api/v1/auth/verify-email', {
+      await axios.post(`${url}/api/v1/auth/verify-email`, {
         verificationToken: query.get('token'),
         email: query.get('email'),
       })
