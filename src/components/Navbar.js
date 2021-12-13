@@ -24,12 +24,14 @@ const Navbar = () => {
                 >
                   Dashboard
                 </Link>
-                <Link
-                  to="/users"
-                  class=" px-4 py-2 hover:bg-green-500 rounded text-gray-200"
-                >
-                  Users
-                </Link>
+                {user.role === 'admin' && (
+                  <Link
+                    to="/users"
+                    class=" px-4 py-2 hover:bg-green-500 rounded text-gray-200"
+                  >
+                    Users
+                  </Link>
+                )}
               </div>
             )}
           </div>
