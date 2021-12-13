@@ -40,7 +40,6 @@ const Login = () => {
         type: 'success',
       })
       setLoading(false)
-      console.log(data.user)
       saveUser(data.user)
       navigate('/dashboard')
     } catch (error) {

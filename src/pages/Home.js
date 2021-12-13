@@ -146,7 +146,7 @@ const Home = () => {
               </h4>
 
               <a
-                href="https://github.com/Delvoid/boilerplate-auth-express"
+                href="https://github.com/Delvoid/boilerplate-auth-frontend"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-center  bg-green-500 px-4 py-2 text-2xl rounded text-white hover:bg-green-600"
