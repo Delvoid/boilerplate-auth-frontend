@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useGlobalContext } from '../context/context'
 import AuthImg from '../assets/undraw_auth.svg'
 import FeaturesImg from '../assets/features_overview.svg'
 import {
@@ -17,7 +16,6 @@ import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'
 import { SiHashnode } from 'react-icons/si'
 
 const Home = () => {
-  const { user } = useGlobalContext()
   return (
     <>
       <header className="container m-auto flex flex-col items-center px-12 h-screen">

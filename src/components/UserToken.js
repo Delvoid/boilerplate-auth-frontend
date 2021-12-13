@@ -1,7 +1,7 @@
 import { useGlobalContext } from '../context/context'
 
 const UserToken = () => {
-  const { tokens, isLoading, setTokens, getUserToken } = useGlobalContext()
+  const { tokens, isLoading } = useGlobalContext()
 
   if (isLoading) {
     return (

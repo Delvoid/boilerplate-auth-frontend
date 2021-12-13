@@ -6,10 +6,6 @@ import { useGlobalContext } from '../context/context'
 const Navbar = () => {
   const { user, logoutUser } = useGlobalContext()
 
-  const isAdmin = () => {
-    return user.role === 'admin'
-  }
-
   return (
     <nav>
       <div class="text-white container m-auto">
