@@ -1,2 +1,2 @@
 /api/*  https://delv-boilerplate-auth.herokuapp.com/:splat  200
-/index.html 200
+/* /index.html 200
