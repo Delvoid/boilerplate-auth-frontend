@@ -45,7 +45,7 @@ const Verify = () => {
   if (error) {
     return (
       <div className="p-4 lg:w-1/3 md:w-2/3 m-auto justify-center">
-        <div className="py-2 pt-10 px-10 mt-10 bg-white rounded-t-lg shadow-xl">
+        <div className="py-2 pt-10 px-10 mt-10 bg-white rounded-lg shadow-xl">
           <h4>
             There was an error, please double check your verification link{' '}
           </h4>
